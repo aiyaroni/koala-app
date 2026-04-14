@@ -186,8 +186,8 @@ export function LandingPage() {
             >
               <div className="bg-surface-container-low h-full w-full rounded-[2.4rem] p-10 flex flex-col md:flex-row items-center gap-10">
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold font-headline mb-4 text-white">200–400₪ בחודש שנעלמו</h3>
-                  <p className="text-white/80">רוב האנשים מוצאים לפחות מינוי אחד ששכחו לבטל. לפעמים גם שניים.</p>
+                  <h3 className="text-3xl font-bold font-headline mb-4 text-white">רוב האנשים משלמים יותר מדי על הפנסיה</h3>
+                  <p className="text-white/80">דמי ניהול גבוהים, פנסיה ישנה ששכחת, כיסויים כפולים בביטוח. קואלה מוצאת את זה תוך דקות.</p>
                 </div>
                 <motion.div
                   animate={{ rotate: 360 }}
