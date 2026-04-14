@@ -66,7 +66,7 @@ export function LandingPage() {
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-black font-headline tracking-tight text-white mb-8 leading-[1.1]">
-              הכסף שלך <span className="text-primary text-glow-primary">עובד נגדך.</span> קואלה מגלה איפה
+              הכסף שלך <span className="text-secondary" style={{ textShadow: "0 0 20px rgba(217,70,239,0.35)" }}>עובד נגדך.</span> <span className="text-primary text-glow-primary">קואלה מגלה איפה</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
