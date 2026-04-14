@@ -66,11 +66,11 @@ export function LandingPage() {
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-5xl md:text-8xl font-black font-headline tracking-tight text-white mb-8 leading-[1.1]">
-              הכסף שלך <span className="text-primary text-glow-primary">עובד נגדך</span> — קואלה מגלה איפה
+              הכסף שלך <span className="text-primary text-glow-primary">עובד נגדך.</span> קואלה מגלה איפה
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
-              שואלים, עונים, מבינים. קואלה הופכת שיחה קצרה לתמונה פיננסית שלמה — בלי גיליונות אקסל ובלי יועץ ב-800 שקל לשעה.
+              שואלים, עונים, מבינים. קואלה הופכת שיחה קצרה לתמונה פיננסית שלמה. בלי גיליונות אקסל, בלי יועץ ב-800 שקל לשעה.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -166,7 +166,7 @@ export function LandingPage() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold font-headline mb-4 text-white">ממשק שיחתי</h3>
-                <p className="text-white/80">בלי טפסים ובלי אקסל. שואלים, עונים — וקואלה עושה את שאר העבודה.</p>
+                <p className="text-white/80">בלי טפסים, בלי אקסל. שואלים, עונים, וקואלה עושה את שאר העבודה.</p>
               </div>
             </motion.div>
 
@@ -217,19 +217,19 @@ export function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  quote: '"גיליתי שאני משלם על 4 מינויים לסטרימינג שאני בכלל לא משתמש בהם. קואלה חסכה לי 200 שקל בחודש ב-2 דקות."',
+                  quote: '"שנים חשבתי שהפנסיה שלי בסדר. קואלה גילתה שאני מפסיד 1,200 שקל בשנה על דמי ניהול גבוהים. עברתי קרן תוך שבוע."',
                   author: 'איתי ל.',
                   initials: 'א',
                   borderColor: 'border-primary',
                 },
                 {
-                  quote: '"הממשק פשוט מדהים. סוף סוף יועץ פיננסי שמדבר בגובה העיניים ולא דורש ממני תואר בכלכלה."',
+                  quote: '"סוף סוף הבנתי כמה אני מרוויח ביד לפני שחתמתי על חוזה. חישוב שכר נטו שלוקח 2 דקות."',
                   author: 'מיכל כ.',
                   initials: 'מ',
                   borderColor: 'border-secondary',
                 },
                 {
-                  quote: '"התובנות שקיבלתי על עמלות הבנק שלי היו שוות הכל. עברתי למסלול אחר וחסכתי מאות שקלים בשנה."',
+                  quote: '"גיליתי שיש לי שני ביטוחי חיים שחופפים אחד את השני. ביטלתי אחד, חסכתי 180 שקל בחודש."',
                   author: 'דניאל ר.',
                   initials: 'ד',
                   borderColor: 'border-primary',

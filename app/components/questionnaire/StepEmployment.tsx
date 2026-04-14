@@ -105,11 +105,11 @@ export default function StepEmployment({ data, onChange }: Props) {
           }
           placeholder="בחר/י גיל פרישה מתוכנן..."
           options={[
-            { value: "60", label: "גיל 60 — פרישה מוקדמת" },
+            { value: "60", label: "גיל 60 (פרישה מוקדמת)" },
             { value: "62", label: "גיל 62" },
-            { value: "65", label: "גיל 65 — סטנדרטי" },
-            { value: "67", label: "גיל 67 — גיל פרישה חוקי" },
-            { value: "flexible", label: "גמיש — עדיין לא החלטתי" },
+            { value: "65", label: "גיל 65 (סטנדרטי)" },
+            { value: "67", label: "גיל 67 (פרישה חוקית)" },
+            { value: "flexible", label: "עדיין לא החלטתי" },
           ]}
         />
       </Question>

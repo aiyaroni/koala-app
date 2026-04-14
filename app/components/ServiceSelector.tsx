@@ -106,7 +106,7 @@ export function ServiceSelector() {
             מה תרצה לבדוק היום?
           </h1>
           <p className="text-zinc-200 text-lg md:text-xl font-body max-w-2xl mx-auto">
-            5 דקות שיגלו לך איפה הכסף נעלם — בחר מאיפה להתחיל
+            5 דקות שיגלו לך איפה הכסף נעלם. בחר מאיפה להתחיל
           </p>
         </motion.div>
 

@@ -161,7 +161,7 @@ export default function StepDocuments({ data, onChange, serviceId }: Props) {
       <div className="mb-2">
         <h2 className="text-2xl font-bold text-stone-100">העלאת מסמכים 📄</h2>
         <p className="text-stone-400 mt-1 text-sm">
-          המסמכים עוזרים לנו לתת לך תמונה מדויקת יותר — הכל אופציונלי
+          המסמכים עוזרים לנו לתת לך תמונה מדויקת יותר. הכל אופציונלי
         </p>
       </div>
 
@@ -170,7 +170,7 @@ export default function StepDocuments({ data, onChange, serviceId }: Props) {
         <DocZone
           label="דוח מסלקה פנסיונית"
           description="מסמך אחד שמרכז את כל הפנסיות, ביטוחי המנהלים וקרנות ההשתלמות שלך"
-          hint='הורד מאתר מסלקת הפנסיה — גוגל "מסלקה פנסיונית" והתחבר עם אפליקציית הבנק שלך'
+          hint='הורד מאתר מסלקת הפנסיה. גוגל "מסלקה פנסיונית" והתחבר עם אפליקציית הבנק שלך'
           link={{ url: "https://www.meslaka.co.il", label: "לאתר המסלקה הפנסיונית" }}
           maxFiles={1}
           docType="pension-report"
@@ -182,7 +182,7 @@ export default function StepDocuments({ data, onChange, serviceId }: Props) {
       {/* Insurance policies */}
       <DocZone
         label="פוליסות ביטוח"
-        description="ביטוח חיים, אובדן כושר עבודה, ביטוח דירה — כל מה שיש לך"
+        description="ביטוח חיים, אובדן כושר עבודה, ביטוח דירה. כל מה שיש לך"
         hint="תמצא את הפוליסות באזור האישי באתר חברת הביטוח"
         docType="insurance-policy"
         files={data.insurancePolicies}
@@ -194,7 +194,7 @@ export default function StepDocuments({ data, onChange, serviceId }: Props) {
         <DocZone
           label="תלושי שכר"
           description="עוזר לנו לאמת את נתוני ההכנסה והניכויים"
-          hint="תלוש השכר האחרון — בדרך כלל נשלח במייל או דרך מערכת השכר"
+          hint="תלוש השכר האחרון. בדרך כלל נשלח במייל או דרך מערכת השכר"
           docType="payslip"
           files={data.payslips}
           onFiles={(files) => onChange({ ...data, payslips: files })}

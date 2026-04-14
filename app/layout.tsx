@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "KOALA | יועץ פיננסי חכם לישראלים",
     template: "%s | KOALA",
   },
-  description: "KOALA מנתח את הפנסיה, הביטוח והמשכורת שלך ומספק תובנות אישיות — בחינם, תוך דקות. ללא יועץ, ללא עלות.",
+  description: "KOALA מנתח את הפנסיה, הביטוח והמשכורת שלך ומספק תובנות אישיות, בחינם, תוך דקות. ללא יועץ, ללא עלות.",
   keywords: ["יועץ פיננסי", "פנסיה", "ביטוח", "שכר נטו", "ביטוח רכב", "ייעוץ פיננסי חינם", "ניתוח פנסיה"],
   openGraph: {
     type: "website",
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     url: "https://koala.finance",
     siteName: "KOALA",
     title: "KOALA | יועץ פיננסי חכם לישראלים",
-    description: "ניתוח פנסיה, ביטוח ומשכורת — תובנות אישיות בדקות, בחינם",
+    description: "ניתוח פנסיה, ביטוח ומשכורת. תובנות אישיות בדקות, בחינם",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "KOALA - יועץ פיננסי חכם" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "KOALA | יועץ פיננסי חכם לישראלים",
-    description: "ניתוח פנסיה, ביטוח ומשכורת בחינם — תוך דקות",
+    description: "ניתוח פנסיה, ביטוח ומשכורת בחינם. תוך דקות",
   },
 };
 

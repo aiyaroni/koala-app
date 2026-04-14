@@ -17,7 +17,7 @@ export default function StepAssets({ data, onChange }: Props) {
       <div className="mb-2">
         <h2 className="text-2xl font-bold text-stone-100">נכסים והתחייבויות 🏠</h2>
         <p className="text-stone-400 mt-1 text-sm">
-          מה יש לך ומה החובות שלך — תמונה כוללת
+          מה יש לך ומה החובות שלך
         </p>
       </div>
 
@@ -105,7 +105,7 @@ export default function StepAssets({ data, onChange }: Props) {
       {/* Liquid savings */}
       <Question
         label="כמה חסכונות נזילים יש לך?"
-        hint="כסף שניתן למשוך בקלות — עו״ש, פיקדונות, קרנות כסף"
+        hint="כסף שניתן למשוך בקלות: עו״ש, פיקדונות, קרנות כסף"
       >
         <TextInput
           type="number"

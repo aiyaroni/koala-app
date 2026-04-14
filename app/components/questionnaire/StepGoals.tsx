@@ -44,14 +44,14 @@ export default function StepGoals({ data, onChange }: Props) {
       <div className="mb-2">
         <h2 className="text-2xl font-bold text-stone-100">מטרות וסובלנות סיכון 🎯</h2>
         <p className="text-stone-400 mt-1 text-sm">
-          החלק הכי חשוב — מה באמת מטריד אותך ולאן רוצים להגיע
+          מה באמת מטריד אותך ולאן רוצים להגיע
         </p>
       </div>
 
       {/* Biggest concern */}
       <Question
         label="מה הדבר הכי מטריד אותך פיננסית?"
-        hint="ספר/י בחופשיות — אין תשובה נכונה או לא נכונה"
+        hint="ספר בחופשיות, אין תשובה נכונה או לא נכונה"
       >
         <Textarea
           value={data.biggestFinancialConcern}
