@@ -82,7 +82,7 @@ export default function ServicePage() {
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center pt-32 pb-12 px-6">
-        <QuestionnaireWizard />
+        <QuestionnaireWizard serviceId={serviceId} />
 
         {/* Decorative background element — service-colored */}
         <div className="fixed bottom-0 left-0 w-full h-[512px] pointer-events-none z-[-1]" style={{

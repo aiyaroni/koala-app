@@ -6,6 +6,7 @@ import { Question, TextInput, Toggle, PillRadio, SelectInput, Reveal } from "./u
 interface Props {
   data: InsuranceData;
   onChange: (data: InsuranceData) => void;
+  serviceId?: string;
 }
 
 export default function StepInsurance({ data, onChange }: Props) {
