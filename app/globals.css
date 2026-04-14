@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Design System Colors */
+  --background: #0e0e0e;
+  --foreground: #ffffff;
+  --primary: #84cc16;
+  --primary-container: #a3e635;
+  --secondary: #d946ef;
+  --secondary-container: #e879f9;
+  --tertiary: #fffade;
+  --tertiary-container: #f9f05a;
+  --error: #D92D20;
+  --error-container: #b92902;
+  --success: #12B76A;
+  --warning: #D92D20;
+  --cyan: #06b6d4;
+  --cyan-light: #67e8f9;
+  --blue: #2563eb;
+  --blue-light: #60a5fa;
+  --orange: #f59e0b;
+  --orange-light: #fcd34d;
+  --green: #10b981;
+  --green-light: #6ee7b7;
+  --purple: #7c3aed;
+  --purple-light: #a78bfa;
+  --surface: #0e0e0e;
+  --surface-bright: #2c2c2c;
+  --surface-container: #191a1a;
+  --surface-container-high: #1f2020;
+  --surface-container-highest: #262626;
+  --surface-container-low: #131313;
+  --surface-container-lowest: #000000;
+  --on-primary: #3a5f00;
+  --on-secondary: #3d0047;
+  --on-surface: #ffffff;
+  --on-surface-variant: #e5e5e5;
+  --outline: #767575;
+  --outline-variant: #484848;
+  /* Alert colors - Dark Mode */
+  --alert-warning-bg: #0f0f0f;
+  --alert-warning-text: #D92D20;
+  --alert-warning-line: #D92D20;
+  --alert-success-bg: #0f0f0f;
+  --alert-success-text: #12B76A;
+  --alert-success-line: #12B76A;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-surface: var(--surface);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-on-primary: var(--on-primary);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+  direction: rtl;
+}
+
+/* Custom toggle styles */
+.toggle-track {
+  transition: background-color 0.2s ease;
+}
+
+/* Custom range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: #44403c;
+  outline: none;
+  direction: ltr;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #84cc16;
+  cursor: pointer;
+  border: 3px solid #1c1917;
+  box-shadow: 0 0 0 2px #84cc16;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #84cc16;
+  cursor: pointer;
+  border: 3px solid #1c1917;
+}
+
+/* Drag & drop zone */
+.drop-zone {
+  border: 2px dashed #44403c;
+  transition: all 0.2s ease;
+}
+
+.drop-zone.drag-over {
+  border-color: #84cc16;
+  background: rgba(132, 204, 22, 0.05);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 3px;
 }
