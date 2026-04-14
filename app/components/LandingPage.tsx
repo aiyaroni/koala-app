@@ -211,7 +211,7 @@ export function LandingPage() {
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold font-headline mb-4 text-white">מה המשתמשים שלנו אומרים?</h2>
+              <h2 className="text-4xl font-bold font-headline mb-4 text-white">מה אומרים אלו שניסו אותנו</h2>
               <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
