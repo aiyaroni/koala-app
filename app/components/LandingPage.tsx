@@ -165,7 +165,7 @@ export function LandingPage() {
                 <MaterialSymbol icon="chat_bubble" className="text-primary text-3xl" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold font-headline mb-4 text-white">ממשק שיחתי</h3>
+                <h3 className="text-2xl font-bold font-headline mb-4 text-white">אנחנו שואלים, אתם עונים</h3>
                 <p className="text-white/80">בלי טפסים, בלי אקסל. שואלים, עונים, וקואלה עושה את שאר העבודה.</p>
               </div>
             </motion.div>
