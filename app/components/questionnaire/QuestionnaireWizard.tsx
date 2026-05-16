@@ -11,19 +11,21 @@ import StepPension from "./StepPension";
 import StepInsurance from "./StepInsurance";
 import StepGoals from "./StepGoals";
 import StepDocuments from "./StepDocuments";
+import StepTaxTriggers from "./StepTaxTriggers";
 
 /* ─── Service → steps mapping ─────────────────────────────── */
 
-type StepKey = "personal" | "employment" | "assets" | "pension" | "insurance" | "goals" | "documents";
+type StepKey = "personal" | "employment" | "assets" | "pension" | "insurance" | "goals" | "documents" | "tax-triggers";
 
 const STEP_META: Record<StepKey, StepInfo> = {
-  personal:   { label: "פרטים אישיים", icon: "👤" },
-  employment: { label: "תעסוקה",        icon: "💼" },
-  assets:     { label: "נכסים",         icon: "🏠" },
-  pension:    { label: "פנסיה",         icon: "🏦" },
-  insurance:  { label: "ביטוחים",       icon: "🛡️" },
-  goals:      { label: "מטרות",         icon: "🎯" },
-  documents:  { label: "מסמכים",        icon: "📄" },
+  personal:       { label: "פרטים אישיים", icon: "👤" },
+  employment:     { label: "תעסוקה",        icon: "💼" },
+  assets:         { label: "נכסים",         icon: "🏠" },
+  pension:        { label: "פנסיה",         icon: "🏦" },
+  insurance:      { label: "ביטוחים",       icon: "🛡️" },
+  goals:          { label: "מטרות",         icon: "🎯" },
+  documents:      { label: "מסמכים",        icon: "📄" },
+  "tax-triggers": { label: "טריגרים להחזר", icon: "💸" },
 };
 
 const SERVICE_STEPS: Record<string, StepKey[]> = {
@@ -31,12 +33,13 @@ const SERVICE_STEPS: Record<string, StepKey[]> = {
   insurance:      ["personal", "employment", "insurance", "goals", "documents"],
   "car-insurance":["personal", "employment", "insurance"],
   "net-salary":   ["personal", "employment"],
+  "tax-refund":   ["personal", "employment", "tax-triggers", "documents"],
   default:        ["personal", "employment", "assets", "pension", "insurance", "goals", "documents"],
 };
 
 /* ─── Validation ───────────────────────────────────────────── */
 
-function isStepValid(key: StepKey, state: QuestionnaireState): boolean {
+function isStepValid(key: StepKey, state: QuestionnaireState, serviceId: string): boolean {
   switch (key) {
     case "personal": {
       const age = Number(state.personal.age);
@@ -49,6 +52,9 @@ function isStepValid(key: StepKey, state: QuestionnaireState): boolean {
     case "pension":
       return !!state.pension.employerContributes;
     case "insurance":
+      if (serviceId === "car-insurance") {
+        return !!(state.insurance.vehicleYear && state.insurance.vehicleMake && state.insurance.carInsurance);
+      }
       return !!state.insurance.carInsurance;
     case "goals":
       return !!(
@@ -57,6 +63,10 @@ function isStepValid(key: StepKey, state: QuestionnaireState): boolean {
         state.goals.monthsWithoutIncome
       );
     case "documents":
+      return true;
+    case "tax-triggers":
+      if (state.taxTriggers.taxYears.length === 0) return false;
+      if (state.taxTriggers.jobChanges && !state.taxTriggers.employersCount) return false;
       return true;
     default:
       return true;
@@ -87,7 +97,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
   const [done, setDone] = useState(false);
 
   const currentKey = stepKeys[step];
-  const valid = isStepValid(currentKey, state);
+  const valid = isStepValid(currentKey, state, serviceId);
 
   const goNext = () => {
     if (step < stepKeys.length - 1) {
@@ -182,7 +192,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
               <StepPersonal data={state.personal} onChange={(d) => setState((s) => ({ ...s, personal: d }))} />
             )}
             {currentKey === "employment" && (
-              <StepEmployment data={state.employment} onChange={(d) => setState((s) => ({ ...s, employment: d }))} />
+              <StepEmployment data={state.employment} onChange={(d) => setState((s) => ({ ...s, employment: d }))} serviceId={serviceId} />
             )}
             {currentKey === "assets" && (
               <StepAssets data={state.assets} onChange={(d) => setState((s) => ({ ...s, assets: d }))} />
@@ -202,6 +212,9 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
             )}
             {currentKey === "documents" && (
               <StepDocuments data={state.documents} onChange={(d) => setState((s) => ({ ...s, documents: d }))} serviceId={serviceId} />
+            )}
+            {currentKey === "tax-triggers" && (
+              <StepTaxTriggers data={state.taxTriggers} onChange={(d) => setState((s) => ({ ...s, taxTriggers: d }))} />
             )}
           </motion.div>
         </AnimatePresence>

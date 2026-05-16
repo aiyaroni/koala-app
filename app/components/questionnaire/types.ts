@@ -15,6 +15,12 @@ export interface EmploymentData {
   additionalIncome: string;
   yearsAtCurrentEmployer: string;
   plannedRetirementAge: "60" | "62" | "65" | "67" | "flexible" | "";
+  // net-salary specific
+  hasCompanyCar: boolean;
+  companyCarValue: string;
+  hasMealVouchers: boolean;
+  mealVouchersAmount: string;
+  pensionEmployeePercent: string;
 }
 
 export interface AssetsData {
@@ -39,6 +45,8 @@ export interface PensionData {
   employerContributes: "yes" | "no" | "unknown" | "";
   knowsManagementFees: boolean;
   managementFeesPercent: string;
+  currentBalance: string;
+  investmentTrack: "conservative" | "balanced" | "aggressive" | "unknown" | "";
 }
 
 export interface InsuranceData {
@@ -53,6 +61,12 @@ export interface InsuranceData {
   hasHealthInsurance: boolean;
   healthInsuranceHmo: string;
   healthInsuranceLevel: string;
+  // car-insurance specific
+  vehicleYear: string;
+  vehicleMake: string;
+  drivingYears: string;
+  annualKm: "under-10k" | "10k-20k" | "20k-30k" | "over-30k" | "";
+  previousAccidents: "none" | "one" | "two-plus" | "";
 }
 
 export interface GoalsData {
@@ -60,6 +74,25 @@ export interface GoalsData {
   familyIfCantWork: "fine" | "problematic" | "catastrophe" | "";
   monthsWithoutIncome: "less-3" | "3-6" | "6-12" | "more-12" | "";
   riskTolerance: number;
+}
+
+export interface TaxTriggersData {
+  taxYears: string[];
+  jobChanges: boolean;
+  employersCount: "2" | "3" | "4+" | "";
+  hadUnemployment: boolean;
+  unemploymentMonths: string;
+  miluimDays: string;
+  hadDonations: boolean;
+  donationsAmount: string;
+  yishuvMezakeh: boolean;
+  yishuvName: string;
+  isNewImmigrantClaim: boolean;
+  isSingleParent: boolean;
+  hasDisabledChild: boolean;
+  hasPersonalDisability: boolean;
+  paysAlimony: boolean;
+  earlyKerenWithdrawal: boolean;
 }
 
 export interface DocumentFile {
@@ -83,6 +116,7 @@ export interface QuestionnaireState {
   insurance: InsuranceData;
   goals: GoalsData;
   documents: DocumentsData;
+  taxTriggers: TaxTriggersData;
 }
 
 export const initialState: QuestionnaireState = {
@@ -102,6 +136,11 @@ export const initialState: QuestionnaireState = {
     additionalIncome: "",
     yearsAtCurrentEmployer: "",
     plannedRetirementAge: "",
+    hasCompanyCar: false,
+    companyCarValue: "",
+    hasMealVouchers: false,
+    mealVouchersAmount: "",
+    pensionEmployeePercent: "",
   },
   assets: {
     hasMortgage: false,
@@ -124,6 +163,8 @@ export const initialState: QuestionnaireState = {
     employerContributes: "",
     knowsManagementFees: false,
     managementFeesPercent: "",
+    currentBalance: "",
+    investmentTrack: "",
   },
   insurance: {
     hasLifeInsurance: false,
@@ -137,6 +178,11 @@ export const initialState: QuestionnaireState = {
     hasHealthInsurance: false,
     healthInsuranceHmo: "",
     healthInsuranceLevel: "",
+    vehicleYear: "",
+    vehicleMake: "",
+    drivingYears: "",
+    annualKm: "",
+    previousAccidents: "",
   },
   goals: {
     biggestFinancialConcern: "",
@@ -148,5 +194,23 @@ export const initialState: QuestionnaireState = {
     pensionReport: null,
     insurancePolicies: [],
     payslips: [],
+  },
+  taxTriggers: {
+    taxYears: [],
+    jobChanges: false,
+    employersCount: "",
+    hadUnemployment: false,
+    unemploymentMonths: "",
+    miluimDays: "",
+    hadDonations: false,
+    donationsAmount: "",
+    yishuvMezakeh: false,
+    yishuvName: "",
+    isNewImmigrantClaim: false,
+    isSingleParent: false,
+    hasDisabledChild: false,
+    hasPersonalDisability: false,
+    paysAlimony: false,
+    earlyKerenWithdrawal: false,
   },
 };

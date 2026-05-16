@@ -13,13 +13,16 @@ import {
 interface Props {
   data: EmploymentData;
   onChange: (data: EmploymentData) => void;
+  serviceId?: string;
 }
 
-export default function StepEmployment({ data, onChange }: Props) {
+export default function StepEmployment({ data, onChange, serviceId = "default" }: Props) {
   const update = <K extends keyof EmploymentData>(
     key: K,
     value: EmploymentData[K]
   ) => onChange({ ...data, [key]: value });
+
+  const isNetSalary = serviceId === "net-salary";
 
   return (
     <div className="flex flex-col gap-6">
@@ -113,6 +116,65 @@ export default function StepEmployment({ data, onChange }: Props) {
           ]}
         />
       </Question>
+
+      {/* ── Net salary specific questions ── */}
+      {isNetSalary && (
+        <>
+          <Question label="יש לך רכב חברה?">
+            <Toggle
+              checked={data.hasCompanyCar}
+              onChange={(v) => update("hasCompanyCar", v)}
+              label="כן, יש לי רכב חברה"
+              sublabel="שווי שימוש מתווסף לשכר החייב במס"
+            />
+            <Reveal show={data.hasCompanyCar}>
+              <Question label="מה שווי הרכב? (לפי מחירון)">
+                <TextInput
+                  type="number"
+                  value={data.companyCarValue}
+                  onChange={(v) => update("companyCarValue", v)}
+                  placeholder="למשל: 120,000"
+                  suffix="₪"
+                />
+              </Question>
+            </Reveal>
+          </Question>
+
+          <Question label="אתה מקבל שוברי ארוחות?">
+            <Toggle
+              checked={data.hasMealVouchers}
+              onChange={(v) => update("hasMealVouchers", v)}
+              label="כן, יש לי שוברי ארוחות / קופת גמל לצרכן"
+            />
+            <Reveal show={data.hasMealVouchers}>
+              <Question label="כמה בחודש?">
+                <TextInput
+                  type="number"
+                  value={data.mealVouchersAmount}
+                  onChange={(v) => update("mealVouchersAmount", v)}
+                  placeholder="למשל: 400"
+                  suffix="₪"
+                />
+              </Question>
+            </Reveal>
+          </Question>
+
+          <Question
+            label="כמה אחוז מהשכר אתה מפריש לפנסיה?"
+            hint="חלק העובד (לא כולל חלק המעסיק)"
+          >
+            <TextInput
+              type="number"
+              value={data.pensionEmployeePercent}
+              onChange={(v) => update("pensionEmployeePercent", v)}
+              placeholder="למשל: 6"
+              suffix="%"
+              min="0"
+              max="20"
+            />
+          </Question>
+        </>
+      )}
     </div>
   );
 }

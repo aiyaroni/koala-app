@@ -37,6 +37,14 @@ const services = [
     color: '#10b981', // green
     colorClass: 'green',
   },
+  {
+    id: 'tax-refund',
+    title: 'החזר מס',
+    description: 'גלה כמה כסף מגיע לך חזרה מהמדינה',
+    icon: 'request_quote',
+    color: '#facc15', // yellow-400
+    colorClass: 'yellow',
+  },
 ];
 
 const containerVariants = {

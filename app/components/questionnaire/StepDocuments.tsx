@@ -155,6 +155,7 @@ function DocZone({ label, description, hint, link, required, files, maxFiles = M
 export default function StepDocuments({ data, onChange, serviceId }: Props) {
   const isPension = !serviceId || serviceId === "pension" || serviceId === "default";
   const isInsurance = serviceId === "insurance";
+  const isTaxRefund = serviceId === "tax-refund";
 
   return (
     <div className="flex flex-col gap-8">
@@ -179,17 +180,45 @@ export default function StepDocuments({ data, onChange, serviceId }: Props) {
         />
       )}
 
-      {/* Insurance policies */}
-      <DocZone
-        label="פוליסות ביטוח"
-        description="ביטוח חיים, אובדן כושר עבודה, ביטוח דירה. כל מה שיש לך"
-        hint="תמצא את הפוליסות באזור האישי באתר חברת הביטוח"
-        docType="insurance-policy"
-        files={data.insurancePolicies}
-        onFiles={(files) => onChange({ ...data, insurancePolicies: files })}
-      />
+      {/* Form 106 — for tax refund */}
+      {isTaxRefund && (
+        <DocZone
+          label="טופס 106"
+          description="ריכוז שנתי של ההכנסות והניכויים מהמעסיק — שדה 042 קריטי לחישוב"
+          hint='קבל ממדור השכר במקום העבודה. אם החלפת עבודה — תצטרך טופס 106 מכל מעסיק'
+          link={{ url: "https://www.kolzchut.org.il/he/%D7%98%D7%95%D7%A4%D7%A1_106", label: "מידע על טופס 106 בכל זכות" }}
+          maxFiles={3}
+          docType="pension-report"
+          files={data.pensionReport ? [data.pensionReport] : []}
+          onFiles={(files) => onChange({ ...data, pensionReport: files[0] ?? null })}
+        />
+      )}
 
-      {/* Payslips — for pension / default */}
+      {/* Insurance policies — not for tax refund */}
+      {!isTaxRefund && (
+        <DocZone
+          label="פוליסות ביטוח"
+          description="ביטוח חיים, אובדן כושר עבודה, ביטוח דירה. כל מה שיש לך"
+          hint="תמצא את הפוליסות באזור האישי באתר חברת הביטוח"
+          docType="insurance-policy"
+          files={data.insurancePolicies}
+          onFiles={(files) => onChange({ ...data, insurancePolicies: files })}
+        />
+      )}
+
+      {/* Receipts/certificates — for tax refund */}
+      {isTaxRefund && (
+        <DocZone
+          label="קבלות תרומות / אישורי מילואים"
+          description="קבלות סעיף 46, אישורי שירות מילואים, אישורי תושב יישוב מזכה"
+          hint="העלה כל מסמך תומך לטריגרים שסימנת בשלב הקודם"
+          docType="insurance-policy"
+          files={data.insurancePolicies}
+          onFiles={(files) => onChange({ ...data, insurancePolicies: files })}
+        />
+      )}
+
+      {/* Payslips — for pension / default / tax-refund */}
       {!isInsurance && (
         <DocZone
           label="תלושי שכר"

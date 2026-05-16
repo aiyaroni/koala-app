@@ -116,6 +116,39 @@ export default function StepPension({ data, onChange }: Props) {
           </Question>
         </Reveal>
       </Question>
+
+      {/* Current balance */}
+      <Question
+        label="מה היתרה המצטברת שלך בקרן? (משוערת)"
+        hint="אופציונלי — ניתן לדלג"
+      >
+        <TextInput
+          type="number"
+          value={data.currentBalance}
+          onChange={(v) => update("currentBalance", v)}
+          placeholder="למשל: 250,000"
+          suffix="₪"
+        />
+      </Question>
+
+      {/* Investment track */}
+      <Question
+        label="באיזה מסלול השקעה אתה?"
+        hint="ניתן לבדוק בדוח הפנסיה שלך"
+      >
+        <PillRadio
+          options={[
+            { value: "conservative", label: "שמרני", emoji: "🛡️" },
+            { value: "balanced", label: "מאוזן", emoji: "⚖️" },
+            { value: "aggressive", label: "מנייתי", emoji: "📈" },
+            { value: "unknown", label: "לא יודע/ת", emoji: "🤷" },
+          ]}
+          value={data.investmentTrack}
+          onChange={(v) =>
+            update("investmentTrack", v as PensionData["investmentTrack"])
+          }
+        />
+      </Question>
     </div>
   );
 }
