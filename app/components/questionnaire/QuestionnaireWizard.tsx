@@ -127,7 +127,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
-          className="w-24 h-24 rounded-full flex items-center justify-center text-5xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+          className="w-24 h-24 rounded-full flex items-center justify-center text-5xl shadow-card"
           style={{ background: "#A85838" }}
         >
           🎉

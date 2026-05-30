@@ -127,7 +127,7 @@ export function ServiceSelector() {
               variants={cardVariants}
               whileHover={{ y: -4, boxShadow: '0 16px 48px rgba(0,0,0,0.08)' }}
               whileTap={{ scale: 0.98 }}
-              className="group relative overflow-hidden bg-white p-8 rounded-xl text-right transition-all duration-300 border border-[#E5E0D8] shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+              className="group relative overflow-hidden bg-white p-8 rounded-xl text-right transition-all duration-300 border border-[#E5E0D8] shadow-card"
             >
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div className="mb-8">
@@ -172,7 +172,7 @@ export function ServiceSelector() {
             </a>
           </nav>
 
-          <div className="text-[#555555] font-body text-sm text-right">© 2024 קואלה - ייעוץ פיננסי אישי</div>
+          <div className="text-[#555555] font-body text-sm text-right">© {new Date().getFullYear()} קואלה - ייעוץ פיננסי אישי</div>
         </div>
       </footer>
 

@@ -115,6 +115,27 @@
   --color-error: var(--error);
   --color-error-container: var(--error-container);
   --color-success: var(--success);
+  /* tokens used in JSX that were previously only in tailwind.config.ts */
+  --color-primary-dim: var(--primary-container);
+  --color-surface-dim: var(--canvas);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--alert-warning-bg);
+  --color-success-bg: var(--alert-success-bg);
+}
+
+@theme {
+  /* Typography — generates font-headline / font-body / font-ui */
+  --font-headline: 'Assistant', sans-serif;
+  --font-body: 'Assistant', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+
+  /* Elevation — generates shadow-card / shadow-card-hover / shadow-soft */
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.04);
+
+  /* Motion — generates ease-premium */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {

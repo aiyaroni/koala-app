@@ -98,7 +98,7 @@ export default function ServicePage() {
 
       {/* Footer */}
       <footer className="w-full py-8 border-t border-outline-variant bg-surface text-center">
-        <div className="text-text-secondary font-body text-sm">© 2026 קואלה - ייעוץ פיננסי אישי</div>
+        <div className="text-text-secondary font-body text-sm">© {new Date().getFullYear()} קואלה - ייעוץ פיננסי אישי</div>
       </footer>
     </div>
   );

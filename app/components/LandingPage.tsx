@@ -78,7 +78,7 @@ export function LandingPage() {
                 onClick={() => router.push('/services')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-10 py-5 rounded-full bg-[#A85838] text-white font-bold text-lg shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:bg-[#8E472B] hover:-translate-y-0.5 transition-all active:scale-95 flex items-center gap-3"
+                className="group relative px-10 py-5 rounded-full bg-[#A85838] text-white font-bold text-lg shadow-card hover:bg-[#8E472B] hover:-translate-y-0.5 transition-all active:scale-95 flex items-center gap-3"
               >
                 <span>התחל ניתוח</span>
                 <motion.span
@@ -108,7 +108,7 @@ export function LandingPage() {
                 <motion.div
                   key={i}
                   whileHover={{ y: -4 }}
-                  className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-surface border border-outline-variant/40 shadow-[0_4px_16px_rgba(0,0,0,0.04)]"
+                  className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-surface border border-outline-variant/40 shadow-soft"
                 >
                   <MaterialSymbol icon={badge.icon} className="text-primary" />
                   <span className="font-bold text-[#242424]">{badge.text}</span>
@@ -131,7 +131,7 @@ export function LandingPage() {
             {/* Large Card */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-8 p-10 rounded-[2.5rem] bg-surface shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative overflow-hidden group"
+              className="md:col-span-8 p-10 rounded-[2.5rem] bg-surface shadow-card relative overflow-hidden group"
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
@@ -158,7 +158,7 @@ export function LandingPage() {
             {/* Small Card */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-container-highest shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex flex-col justify-between border border-outline-variant/5"
+              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-container-highest shadow-card flex flex-col justify-between border border-outline-variant/5"
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
                 <MaterialSymbol icon="chat_bubble" className="text-primary text-3xl" />
@@ -172,7 +172,7 @@ export function LandingPage() {
             {/* Three Columns Section */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-bright shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex flex-col gap-6"
+              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-bright shadow-card flex flex-col gap-6"
             >
               <MaterialSymbol icon="security" className="text-secondary text-4xl" />
               <h3 className="text-xl font-bold text-[#242424]">אבטחה מקצה לקצה</h3>
@@ -269,7 +269,7 @@ export function LandingPage() {
                 onClick={() => router.push('/services')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-16 py-6 rounded-full bg-[#A85838] text-white font-black text-xl hover:bg-[#8E472B] hover:-translate-y-0.5 transition-all shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+                className="px-16 py-6 rounded-full bg-[#A85838] text-white font-black text-xl hover:bg-[#8E472B] hover:-translate-y-0.5 transition-all shadow-card"
               >
                 בואו נתחיל
               </motion.button>
@@ -300,7 +300,7 @@ export function LandingPage() {
             <a className="text-[#555555] hover:text-primary transition-colors" href="#">צור קשר</a>
           </nav>
           <div className="text-[#555555] text-sm font-['Inter'] text-right">
-            © 2025 קואלה - ניתוח פיננסי אישי
+            © {new Date().getFullYear()} קואלה - ניתוח פיננסי אישי
           </div>
         </div>
       </footer>
