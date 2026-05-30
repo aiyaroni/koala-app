@@ -47,7 +47,7 @@ export default function ServicePage() {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex flex-col bg-surface text-on-surface items-center justify-center">
+      <div className="min-h-screen flex flex-col bg-canvas text-on-surface items-center justify-center">
         <h1 className="text-4xl font-headline mb-8 text-[#242424]">שירות לא נמצא</h1>
         <motion.button
           onClick={() => router.push('/services')}
@@ -62,7 +62,7 @@ export default function ServicePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface text-on-surface">
+    <div className="min-h-screen flex flex-col bg-canvas text-on-surface">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-outline-variant">
         <div className="flex flex-row-reverse justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">

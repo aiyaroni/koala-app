@@ -28,7 +28,7 @@ export function LandingPage() {
   const router = useRouter();
 
   return (
-    <div className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <div className="bg-canvas text-on-surface font-body selection:bg-primary selection:text-on-primary">
       {/* TopAppBar */}
       <header className="fixed top-0 w-full z-50 glass-nav border-b border-black/5">
         <div className="flex flex-row-reverse justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
@@ -57,7 +57,7 @@ export function LandingPage() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="relative min-h-[870px] flex flex-col justify-center items-center text-center px-6 hero-gradient"
+          className="relative min-h-[640px] py-20 flex flex-col justify-center items-center text-center px-6 hero-gradient"
         >
           <div className="max-w-4xl mx-auto">
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20 mb-8">
@@ -99,7 +99,7 @@ export function LandingPage() {
             </motion.div>
 
             {/* Trust Badges */}
-            <motion.div variants={itemVariants} className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <motion.div variants={itemVariants} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
               {[
                 { icon: 'timer', text: '5 דקות' },
                 { icon: 'lock', text: 'ללא שמירת מידע' },
@@ -108,7 +108,7 @@ export function LandingPage() {
                 <motion.div
                   key={i}
                   whileHover={{ y: -4 }}
-                  className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-surface-container-low border border-outline-variant/10"
+                  className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-surface border border-outline-variant/40 shadow-[0_4px_16px_rgba(0,0,0,0.04)]"
                 >
                   <MaterialSymbol icon={badge.icon} className="text-primary" />
                   <span className="font-bold text-[#242424]">{badge.text}</span>
@@ -131,7 +131,7 @@ export function LandingPage() {
             {/* Large Card */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-8 p-10 rounded-[2.5rem] bg-surface-container-low relative overflow-hidden group"
+              className="md:col-span-8 p-10 rounded-[2.5rem] bg-surface shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative overflow-hidden group"
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
@@ -158,7 +158,7 @@ export function LandingPage() {
             {/* Small Card */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-container-highest flex flex-col justify-between border border-outline-variant/5"
+              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-container-highest shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex flex-col justify-between border border-outline-variant/5"
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
                 <MaterialSymbol icon="chat_bubble" className="text-primary text-3xl" />
@@ -172,7 +172,7 @@ export function LandingPage() {
             {/* Three Columns Section */}
             <motion.div
               whileHover={{ y: -8 }}
-              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-bright flex flex-col gap-6"
+              className="md:col-span-4 p-10 rounded-[2.5rem] bg-surface-bright shadow-[0_10px_40px_rgba(0,0,0,0.06)] flex flex-col gap-6"
             >
               <MaterialSymbol icon="security" className="text-secondary text-4xl" />
               <h3 className="text-xl font-bold text-[#242424]">אבטחה מקצה לקצה</h3>
@@ -183,7 +183,7 @@ export function LandingPage() {
               whileHover={{ y: -8 }}
               className="md:col-span-8 p-1 rounded-[2.5rem] bg-gradient-to-l from-primary/20 to-transparent"
             >
-              <div className="bg-surface-container-low h-full w-full rounded-[2.4rem] p-10 flex flex-col md:flex-row items-center gap-10">
+              <div className="bg-surface h-full w-full rounded-[2.4rem] p-10 flex flex-col md:flex-row items-center gap-10">
                 <div className="flex-1">
                   <h3 className="text-3xl font-bold font-headline mb-4 text-[#242424]">רוב האנשים משלמים יותר מדי על הפנסיה</h3>
                   <p className="text-[#555555]">דמי ניהול גבוהים, פנסיה ישנה ששכחת, כיסויים כפולים בביטוח. קואלה מוצאת את זה תוך דקות.</p>
@@ -206,7 +206,7 @@ export function LandingPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="py-24 bg-surface-container-low/50"
+          className="py-24 bg-surface-container"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
