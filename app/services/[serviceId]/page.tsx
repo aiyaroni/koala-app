@@ -10,31 +10,31 @@ const serviceDetails = {
     title: 'הפנסיה שלי',
     description: 'גלה כמה קצבה תקבל ואיפה אתה מפסיד',
     icon: 'wallet',
-    color: '#06b6d4',
+    color: '#A85838',
   },
   insurance: {
     title: 'הביטוחים שלי',
     description: 'זהה כפילויות וחורים בכיסוי שלך',
     icon: 'shield',
-    color: '#7c3aed',
+    color: '#A85838',
   },
   'car-insurance': {
     title: 'ביטוח רכב',
     description: 'השווה מחירים ותוזיל את הפוליסה',
     icon: 'directions_car',
-    color: '#f59e0b',
+    color: '#A85838',
   },
   'net-salary': {
     title: 'שכר נטו',
     description: 'חשב כמה תקבל ביד ומה מגיע לך',
     icon: 'trending_up',
-    color: '#10b981',
+    color: '#A85838',
   },
   'tax-refund': {
     title: 'החזר מס',
     description: 'גלה כמה כסף מגיע לך חזרה מהמדינה',
     icon: 'request_quote',
-    color: '#facc15',
+    color: '#A85838',
   },
 };
 
@@ -47,8 +47,8 @@ export default function ServicePage() {
 
   if (!service) {
     return (
-      <div className="dark min-h-screen flex flex-col bg-surface text-on-surface items-center justify-center">
-        <h1 className="text-4xl font-headline mb-8">שירות לא נמצא</h1>
+      <div className="min-h-screen flex flex-col bg-surface text-on-surface items-center justify-center">
+        <h1 className="text-4xl font-headline mb-8 text-[#242424]">שירות לא נמצא</h1>
         <motion.button
           onClick={() => router.push('/services')}
           whileHover={{ scale: 1.05 }}
@@ -62,14 +62,14 @@ export default function ServicePage() {
   }
 
   return (
-    <div className="dark min-h-screen flex flex-col bg-surface text-on-surface">
+    <div className="min-h-screen flex flex-col bg-surface text-on-surface">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#0e0e0e]/70 backdrop-blur-md border-b border-outline-variant/10">
+      <header className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-outline-variant">
         <div className="flex flex-row-reverse justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
           <motion.button
             onClick={() => router.push('/services')}
             whileHover={{ scale: 1.1 }}
-            className="text-zinc-200 hover:text-primary transition-colors"
+            className="text-text-secondary hover:text-primary transition-colors"
           >
             <MaterialSymbol icon="arrow_forward" />
           </motion.button>
@@ -79,7 +79,7 @@ export default function ServicePage() {
           <motion.button
             onClick={() => router.push('/')}
             whileHover={{ scale: 1.1 }}
-            className="text-zinc-200 hover:text-primary transition-colors"
+            className="text-text-secondary hover:text-primary transition-colors"
           >
             <MaterialSymbol icon="home" />
           </motion.button>
@@ -97,8 +97,8 @@ export default function ServicePage() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-8 border-t border-zinc-800/20 bg-surface text-center">
-        <div className="text-zinc-300 font-body text-sm">© 2024 קואלה - ייעוץ פיננסי אישי</div>
+      <footer className="w-full py-8 border-t border-outline-variant bg-surface text-center">
+        <div className="text-text-secondary font-body text-sm">© 2026 קואלה - ייעוץ פיננסי אישי</div>
       </footer>
     </div>
   );

@@ -1,58 +1,102 @@
 @import "tailwindcss";
 
 :root {
-  /* Design System Colors */
-  --background: #0e0e0e;
-  --foreground: #ffffff;
-  --primary: #84cc16;
-  --primary-container: #a3e635;
-  --secondary: #d946ef;
-  --secondary-container: #e879f9;
-  --tertiary: #fffade;
-  --tertiary-container: #f9f05a;
+  /* ============================================================
+     Editorial Tech-Boutique — Light Mode Design System
+     ============================================================ */
+
+  /* --- Core palette --- */
+  --canvas: #FBF9F6;          /* שמנת רכה — רקע ראשי */
+  --background: #FBF9F6;
+  --foreground: #242424;
+  --text-primary: #242424;    /* אפור פחם — כותרות וטקסט מוביל */
+  --text-secondary: #555555;  /* אפור גרפיט מט — פסקאות */
+
+  /* --- Brand accent (טרקוטה, WCAG AA מול לבן) --- */
+  --accent: #A85838;
+  --accent-hover: #8E472B;
+  --primary: #A85838;
+  --primary-container: #C97A5B;
+  --secondary: #96E600;       /* ליים מכויל — גרפי/מרקר בלבד, לא טקסט */
+  --secondary-container: #96E600;
+  --lime-calibrated: #96E600;
+
+  /* --- Tertiary / neutral fills --- */
+  --tertiary: #F5F2EE;
+  --tertiary-container: #EFEAE4;
+
+  /* --- Status (סמנטי, נשמר) --- */
   --error: #D92D20;
-  --error-container: #b92902;
+  --error-container: #FBEAE8;
   --success: #12B76A;
   --warning: #D92D20;
-  --cyan: #06b6d4;
-  --cyan-light: #67e8f9;
-  --blue: #2563eb;
-  --blue-light: #60a5fa;
-  --orange: #f59e0b;
-  --orange-light: #fcd34d;
-  --green: #10b981;
+
+  /* --- Decorative (ממופים לנייטרל שקט) --- */
+  --cyan: #555555;
+  --cyan-light: #888888;
+  --blue: #555555;
+  --blue-light: #888888;
+  --orange: #A85838;
+  --orange-light: #C97A5B;
+  --green: #12B76A;
   --green-light: #6ee7b7;
-  --purple: #7c3aed;
-  --purple-light: #a78bfa;
-  --surface: #0e0e0e;
-  --surface-bright: #2c2c2c;
-  --surface-container: #191a1a;
-  --surface-container-high: #1f2020;
-  --surface-container-highest: #262626;
-  --surface-container-low: #131313;
-  --surface-container-lowest: #000000;
-  --on-primary: #3a5f00;
-  --on-secondary: #3d0047;
-  --on-surface: #ffffff;
-  --on-surface-variant: #e5e5e5;
-  --outline: #767575;
-  --outline-variant: #484848;
-  /* Alert colors - Dark Mode */
-  --alert-warning-bg: #0f0f0f;
-  --alert-warning-text: #D92D20;
+  --purple: #555555;
+  --purple-light: #888888;
+
+  /* --- Surfaces (סולם שמנת בהיר) --- */
+  --surface: #FFFFFF;
+  --surface-bright: #EFEAE4;
+  --surface-container: #F5F2EE;
+  --surface-container-high: #EFEAE4;
+  --surface-container-highest: #EBE4DC;
+  --surface-container-low: #FBF9F6;
+  --surface-container-lowest: #FFFFFF;
+
+  /* --- On-colors / outlines --- */
+  --on-primary: #FFFFFF;
+  --on-secondary: #242424;
+  --on-surface: #242424;
+  --on-surface-variant: #555555;
+  --outline: #B5AFA6;
+  --outline-variant: #E5E0D8;
+
+  /* --- Alert colors — Light Mode --- */
+  --alert-warning-bg: #FBEAE8;
+  --alert-warning-text: #B42318;
   --alert-warning-line: #D92D20;
-  --alert-success-bg: #0f0f0f;
-  --alert-success-text: #12B76A;
+  --alert-success-bg: #F0FAF5;
+  --alert-success-text: #027A48;
   --alert-success-line: #12B76A;
+
+  /* --- Spacing (8px grid) --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* --- Motion --- */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: transform 0.35s var(--ease-premium),
+                       box-shadow 0.35s var(--ease-premium),
+                       background-color 0.25s ease;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
   --color-primary: var(--primary);
   --color-primary-container: var(--primary-container);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-secondary: var(--secondary);
   --color-secondary-container: var(--secondary-container);
+  --color-lime: var(--lime-calibrated);
   --color-tertiary: var(--tertiary);
   --color-tertiary-container: var(--tertiary-container);
   --color-surface: var(--surface);
@@ -63,7 +107,6 @@
   --color-surface-container-low: var(--surface-container-low);
   --color-surface-container-lowest: var(--surface-container-lowest);
   --color-on-primary: var(--on-primary);
-  --color-secondary: var(--secondary);
   --color-on-secondary: var(--on-secondary);
   --color-on-surface: var(--on-surface);
   --color-on-surface-variant: var(--on-surface-variant);
@@ -71,13 +114,29 @@
   --color-outline-variant: var(--outline-variant);
   --color-error: var(--error);
   --color-error-container: var(--error-container);
+  --color-success: var(--success);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
   direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- מרקר ליים מכויל (שליש תחתון, מאחורי הטקסט) --- */
+.highlight-marker {
+  background: linear-gradient(180deg, transparent 62%, var(--lime-calibrated) 62%);
+  display: inline;
+  padding: 0 var(--space-xs);
+}
+
+/* --- נגישות: focus ring למקלדת --- */
+:focus-visible {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 4px;
 }
 
 /* Custom toggle styles */
@@ -91,7 +150,7 @@ input[type="range"] {
   appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: #44403c;
+  background: var(--outline-variant);
   outline: none;
   direction: ltr;
 }
@@ -102,30 +161,30 @@ input[type="range"]::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #84cc16;
+  background: var(--accent);
   cursor: pointer;
-  border: 3px solid #1c1917;
-  box-shadow: 0 0 0 2px #84cc16;
+  border: 3px solid var(--canvas);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 input[type="range"]::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #84cc16;
+  background: var(--accent);
   cursor: pointer;
-  border: 3px solid #1c1917;
+  border: 3px solid var(--canvas);
 }
 
 /* Drag & drop zone */
 .drop-zone {
-  border: 2px dashed #44403c;
+  border: 2px dashed var(--outline-variant);
   transition: all 0.2s ease;
 }
 
 .drop-zone.drag-over {
-  border-color: #84cc16;
-  background: rgba(132, 204, 22, 0.05);
+  border-color: var(--accent);
+  background: rgba(168, 88, 56, 0.05);
 }
 
 /* Scrollbar */
@@ -133,9 +192,19 @@ input[type="range"]::-moz-range-thumb {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #1c1917;
+  background: var(--surface-container);
 }
 ::-webkit-scrollbar-thumb {
-  background: #44403c;
+  background: var(--outline-variant);
   border-radius: 3px;
+}
+
+/* --- נגישות: כיבוד העדפת תנועה מופחתת --- */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

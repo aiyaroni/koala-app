@@ -27,8 +27,8 @@ export default function StepEmployment({ data, onChange, serviceId = "default" }
   return (
     <div className="flex flex-col gap-6">
       <div className="mb-2">
-        <h2 className="text-2xl font-bold text-stone-100">תעסוקה והכנסה 💼</h2>
-        <p className="text-stone-400 mt-1 text-sm">
+        <h2 className="text-2xl font-bold text-[#242424]">תעסוקה והכנסה 💼</h2>
+        <p className="text-[#555555] mt-1 text-sm">
           נבין מה המצב שלך בעולם העבודה
         </p>
       </div>

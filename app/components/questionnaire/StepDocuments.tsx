@@ -58,15 +58,15 @@ function DocZone({ label, description, hint, link, required, files, maxFiles = M
   return (
     <div className="flex flex-col gap-2.5">
       <div className="flex items-center gap-2">
-        <p className="text-base font-semibold text-stone-100">{label}</p>
+        <p className="text-base font-semibold text-[#242424]">{label}</p>
         {required && (
-          <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: "rgba(217,70,239,0.15)", color: "#d946ef" }}>
+          <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: "rgba(168,88,56,0.12)", color: "#A85838" }}>
             חובה
           </span>
         )}
-        <span className="text-xs text-stone-500 mr-auto">עד {maxFiles} קבצים</span>
+        <span className="text-xs text-[#555555] mr-auto">עד {maxFiles} קבצים</span>
       </div>
-      <p className="text-sm text-stone-400">{description}</p>
+      <p className="text-sm text-[#555555]">{description}</p>
 
       {/* Uploaded files list */}
       <AnimatePresence>
@@ -77,17 +77,17 @@ function DocZone({ label, description, hint, link, required, files, maxFiles = M
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="flex items-center justify-between px-4 py-2.5 rounded-xl"
-            style={{ background: "rgba(132,204,22,0.08)", border: "1px solid rgba(132,204,22,0.2)" }}
+            style={{ background: "rgba(168,88,56,0.08)", border: "1px solid rgba(168,88,56,0.2)" }}
           >
             <button
               type="button"
               onClick={() => removeFile(file.id)}
-              className="text-xs text-stone-500 hover:text-red-400 transition-colors"
+              className="text-xs text-[#555555] hover:text-red-500 transition-colors"
             >
               הסר
             </button>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-stone-200 text-right truncate max-w-[200px]">{file.name}</span>
+              <span className="text-sm text-[#242424] text-right truncate max-w-[200px]">{file.name}</span>
               <span className="text-base">✅</span>
             </div>
           </motion.div>
@@ -102,8 +102,8 @@ function DocZone({ label, description, hint, link, required, files, maxFiles = M
           onDrop={onDrop}
           onClick={() => inputRef.current?.click()}
           animate={{
-            borderColor: isDragging ? "#84cc16" : "#44403c",
-            background: isDragging ? "rgba(132,204,22,0.05)" : "rgba(41,37,36,0.3)",
+            borderColor: isDragging ? "#A85838" : "#E5E0D8",
+            background: isDragging ? "rgba(168,88,56,0.05)" : "rgba(245,242,238,0.8)",
           }}
           className="relative flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border-2 border-dashed cursor-pointer min-h-[100px]"
         >

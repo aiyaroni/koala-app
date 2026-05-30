@@ -22,15 +22,15 @@ export default function StepInsurance({ data, onChange, serviceId = "default" }:
       <div className="mb-2">
         {isCarOnly ? (
           <>
-            <h2 className="text-2xl font-bold text-stone-100">ביטוח רכב 🚗</h2>
-            <p className="text-stone-400 mt-1 text-sm">
+            <h2 className="text-2xl font-bold text-[#242424]">ביטוח רכב 🚗</h2>
+            <p className="text-[#555555] mt-1 text-sm">
               פרטי הרכב והנהג כדי שנוכל לבדוק עבורך את הכיסוי הטוב ביותר
             </p>
           </>
         ) : (
           <>
-            <h2 className="text-2xl font-bold text-stone-100">ביטוחים 🛡️</h2>
-            <p className="text-stone-400 mt-1 text-sm">
+            <h2 className="text-2xl font-bold text-[#242424]">ביטוחים 🛡️</h2>
+            <p className="text-[#555555] mt-1 text-sm">
               נוודא שיש לך כיסוי למצבים שעדיף לא לחשוב עליהם
             </p>
           </>

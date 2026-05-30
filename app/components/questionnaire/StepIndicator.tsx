@@ -19,10 +19,10 @@ export default function StepIndicator({ currentStep, steps }: StepIndicatorProps
   return (
     <div className="w-full mb-8">
       {/* Progress bar */}
-      <div className="relative h-2 rounded-full bg-stone-800 mb-5 overflow-hidden">
+      <div className="relative h-2 rounded-full bg-[#E5E0D8] mb-5 overflow-hidden">
         <motion.div
           className="absolute inset-y-0 right-0 rounded-full"
-          style={{ background: "linear-gradient(to left, #d946ef, #84cc16)" }}
+          style={{ background: "#A85838" }}
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -46,10 +46,10 @@ export default function StepIndicator({ currentStep, steps }: StepIndicatorProps
                 animate={{
                   scale: isActive ? 1.2 : isCompleted ? [1.4, 1] : 1,
                   backgroundColor: isCompleted
-                    ? "#84cc16"
+                    ? "#A85838"
                     : isActive
-                    ? "#d946ef"
-                    : "#44403c",
+                    ? "#C97A5B"
+                    : "#E5E0D8",
                 }}
                 transition={{
                   duration: isCompleted && !isActive ? 0.4 : 0.3,
@@ -62,7 +62,7 @@ export default function StepIndicator({ currentStep, steps }: StepIndicatorProps
               >
                 {isCompleted ? (
                   <svg
-                    className="w-4 h-4 text-stone-900"
+                    className="w-4 h-4 text-[#FFFFFF]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -80,7 +80,7 @@ export default function StepIndicator({ currentStep, steps }: StepIndicatorProps
               <span
                 className="text-xs text-center leading-tight hidden sm:block"
                 style={{
-                  color: isActive ? "#d946ef" : isCompleted ? "#84cc16" : "#57534e",
+                  color: isActive ? "#A85838" : isCompleted ? "#A85838" : "#555555",
                   fontWeight: isActive ? 600 : 400,
                 }}
               >
@@ -96,7 +96,7 @@ export default function StepIndicator({ currentStep, steps }: StepIndicatorProps
         <span className="text-xs text-stone-500">
           שלב {currentStep + 1} מתוך {totalSteps}
         </span>
-        <span className="text-xs font-medium" style={{ color: "#84cc16" }}>
+        <span className="text-xs font-medium" style={{ color: "#A85838" }}>
           {steps[currentStep]?.label}
         </span>
       </div>

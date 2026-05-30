@@ -20,20 +20,20 @@ export function Toggle({ checked, onChange, label, sublabel }: ToggleProps) {
       onClick={() => onChange(!checked)}
       className="flex items-center justify-between w-full p-4 rounded-2xl border transition-all duration-200 text-right"
       style={{
-        borderColor: checked ? "#84cc16" : "#44403c",
-        background: checked ? "rgba(132,204,22,0.08)" : "rgba(41,37,36,0.5)",
+        borderColor: checked ? "#A85838" : "#E5E0D8",
+        background: checked ? "rgba(168,88,56,0.08)" : "rgba(245,242,238,0.8)",
       }}
     >
       <div className="flex flex-col items-start">
-        <span className="text-base font-medium text-stone-100">{label}</span>
+        <span className="text-base font-medium text-[#242424]">{label}</span>
         {sublabel && (
-          <span className="text-sm text-stone-400 mt-0.5">{sublabel}</span>
+          <span className="text-sm text-[#555555] mt-0.5">{sublabel}</span>
         )}
       </div>
       {/* Track */}
       <div
         className="relative flex-shrink-0 w-12 h-6 rounded-full transition-colors duration-200 mr-3"
-        style={{ background: checked ? "#84cc16" : "#57534e" }}
+        style={{ background: checked ? "#A85838" : "#D9D2C7" }}
       >
         <motion.div
           className="absolute top-1 w-4 h-4 rounded-full bg-white shadow-md"
@@ -71,12 +71,12 @@ export function PillRadio({ options, value, onChange }: PillRadioProps) {
           whileTap={{ scale: 0.95 }}
           className="px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200"
           style={{
-            borderColor: value === opt.value ? "#84cc16" : "#44403c",
+            borderColor: value === opt.value ? "#A85838" : "#E5E0D8",
             background:
               value === opt.value
-                ? "rgba(132,204,22,0.15)"
-                : "rgba(41,37,36,0.5)",
-            color: value === opt.value ? "#84cc16" : "#a8a29e",
+                ? "rgba(168,88,56,0.12)"
+                : "rgba(245,242,238,0.8)",
+            color: value === opt.value ? "#A85838" : "#555555",
           }}
         >
           {opt.emoji && <span className="ml-1.5">{opt.emoji}</span>}
@@ -120,8 +120,8 @@ export function TextInput({
         placeholder={placeholder}
         min={min}
         max={max}
-        className="w-full px-4 py-3 rounded-xl border bg-stone-900 text-stone-100 placeholder-stone-500 outline-none transition-all duration-200 text-right"
-        style={{ borderColor: isFocused ? "#84cc16" : "#44403c" }}
+        className="w-full px-4 py-3 rounded-xl border border-[#E5E0D8] bg-white text-[#242424] placeholder-stone-500 outline-none transition-all duration-200 text-right"
+        style={{ borderColor: isFocused ? "#A85838" : "#E5E0D8" }}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
@@ -133,10 +133,10 @@ export function TextInput({
           opacity: isFocused ? 1 : 0,
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
-        style={{ background: "#84cc16" }}
+        style={{ background: "#A85838" }}
       />
       {suffix && (
-        <span className="absolute left-4 text-stone-400 text-sm font-medium pointer-events-none">
+        <span className="absolute left-4 text-[#555555] text-sm font-medium pointer-events-none">
           {suffix}
         </span>
       )}
@@ -172,8 +172,8 @@ export function SelectInput({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border bg-stone-900 text-stone-100 outline-none transition-all duration-200 appearance-none cursor-pointer text-right"
-        style={{ borderColor: isFocused ? "#84cc16" : "#44403c" }}
+        className="w-full px-4 py-3 rounded-xl border border-[#E5E0D8] bg-white text-[#242424] outline-none transition-all duration-200 appearance-none cursor-pointer text-right"
+        style={{ borderColor: isFocused ? "#A85838" : "#E5E0D8" }}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       >
@@ -196,7 +196,7 @@ export function SelectInput({
           opacity: isFocused ? 1 : 0,
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
-        style={{ background: "#84cc16" }}
+        style={{ background: "#A85838" }}
       />
     </div>
   );
@@ -219,8 +219,8 @@ export function Question({ label, hint, children }: QuestionProps) {
       className="flex flex-col gap-2.5"
     >
       <div>
-        <p className="text-base font-semibold text-stone-100">{label}</p>
-        {hint && <p className="text-sm text-stone-400 mt-0.5">{hint}</p>}
+        <p className="text-base font-semibold text-[#242424]">{label}</p>
+        {hint && <p className="text-sm text-[#555555] mt-0.5">{hint}</p>}
       </div>
       {children}
     </motion.div>
@@ -279,8 +279,8 @@ export function Textarea({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={rows}
-        className="w-full px-4 py-3 rounded-xl border bg-stone-900 text-stone-100 placeholder-stone-500 outline-none transition-all duration-200 resize-none text-right leading-relaxed"
-        style={{ borderColor: isFocused ? "#84cc16" : "#44403c" }}
+        className="w-full px-4 py-3 rounded-xl border border-[#E5E0D8] bg-white text-[#242424] placeholder-stone-500 outline-none transition-all duration-200 resize-none text-right leading-relaxed"
+        style={{ borderColor: isFocused ? "#A85838" : "#E5E0D8" }}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
@@ -292,7 +292,7 @@ export function Textarea({
           opacity: isFocused ? 1 : 0,
         }}
         transition={{ duration: 0.2, ease: "easeOut" }}
-        style={{ background: "#84cc16" }}
+        style={{ background: "#A85838" }}
       />
     </div>
   );

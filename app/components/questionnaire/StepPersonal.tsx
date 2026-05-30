@@ -22,8 +22,8 @@ export default function StepPersonal({ data, onChange }: Props) {
   return (
     <div className="flex flex-col gap-6">
       <div className="mb-2">
-        <h2 className="text-2xl font-bold text-stone-100">קצת עליך 👋</h2>
-        <p className="text-stone-400 mt-1 text-sm">
+        <h2 className="text-2xl font-bold text-[#242424]">קצת עליך 👋</h2>
+        <p className="text-[#555555] mt-1 text-sm">
           כמה שאלות בסיסיות כדי שנוכל להכיר אותך טוב יותר
         </p>
       </div>

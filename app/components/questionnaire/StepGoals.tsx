@@ -29,21 +29,21 @@ export default function StepGoals({ data, onChange }: Props) {
   const riskColors: Record<number, string> = {
     1: "#22c55e",
     2: "#4ade80",
-    3: "#84cc16",
-    4: "#a3e635",
-    5: "#facc15",
+    3: "#A85838",
+    4: "#C97A5B",
+    5: "#A85838",
     6: "#fb923c",
     7: "#f97316",
     8: "#ef4444",
     9: "#dc2626",
-    10: "#d946ef",
+    10: "#96E600",
   };
 
   return (
     <div className="flex flex-col gap-6">
       <div className="mb-2">
-        <h2 className="text-2xl font-bold text-stone-100">מטרות וסובלנות סיכון 🎯</h2>
-        <p className="text-stone-400 mt-1 text-sm">
+        <h2 className="text-2xl font-bold text-[#242424]">מטרות וסובלנות סיכון 🎯</h2>
+        <p className="text-[#555555] mt-1 text-sm">
           מה באמת מטריד אותך ולאן רוצים להגיע
         </p>
       </div>
@@ -127,7 +127,7 @@ export default function StepGoals({ data, onChange }: Props) {
 
           {/* Slider — explicit dir=ltr so min=right, max=left (matches RTL layout) */}
           <div className="px-1" dir="ltr">
-            <div className="flex items-center justify-between mb-1 text-sm text-stone-400">
+            <div className="flex items-center justify-between mb-1 text-sm text-[#555555]">
               <span>שמרן מאוד 🐢</span>
               <span>אגרסיבי 🚀</span>
             </div>
@@ -140,7 +140,7 @@ export default function StepGoals({ data, onChange }: Props) {
               onChange={(e) => update("riskTolerance", Number(e.target.value))}
               className="w-full"
               style={{
-                background: `linear-gradient(to right, ${riskColors[data.riskTolerance]} 0%, ${riskColors[data.riskTolerance]} ${(data.riskTolerance - 1) / 9 * 100}%, #44403c ${(data.riskTolerance - 1) / 9 * 100}%, #44403c 100%)`,
+                background: `linear-gradient(to right, ${riskColors[data.riskTolerance]} 0%, ${riskColors[data.riskTolerance]} ${(data.riskTolerance - 1) / 9 * 100}%, #E5E0D8 ${(data.riskTolerance - 1) / 9 * 100}%, #E5E0D8 100%)`,
               }}
             />
           </div>
@@ -152,7 +152,7 @@ export default function StepGoals({ data, onChange }: Props) {
                 key={n}
                 className="text-xs"
                 style={{
-                  color: n <= data.riskTolerance ? riskColors[data.riskTolerance] : "#57534e",
+                  color: n <= data.riskTolerance ? riskColors[data.riskTolerance] : "#D9D2C7",
                   fontWeight: n === data.riskTolerance ? 700 : 400,
                 }}
               >

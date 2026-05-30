@@ -10,40 +10,35 @@ const services = [
     title: 'הפנסיה שלי',
     description: 'גלה כמה קצבה תקבל ואיפה אתה מפסיד',
     icon: 'wallet',
-    color: '#06b6d4', // cyan
-    colorClass: 'cyan',
+    color: '#A85838', // terracotta accent
   },
   {
     id: 'insurance',
     title: 'הביטוחים שלי',
     description: 'זהה כפילויות וחורים בכיסוי שלך',
     icon: 'shield',
-    color: '#7c3aed', // purple
-    colorClass: 'purple',
+    color: '#A85838', // terracotta accent
   },
   {
     id: 'car-insurance',
     title: 'ביטוח רכב',
     description: 'השווה מחירים ותוזיל את הפוליסה',
     icon: 'directions_car',
-    color: '#f59e0b', // orange
-    colorClass: 'orange',
+    color: '#A85838', // terracotta accent
   },
   {
     id: 'net-salary',
     title: 'שכר נטו',
     description: 'חשב כמה תקבל ביד ומה מגיע לך',
     icon: 'trending_up',
-    color: '#10b981', // green
-    colorClass: 'green',
+    color: '#A85838', // terracotta accent
   },
   {
     id: 'tax-refund',
     title: 'החזר מס',
     description: 'גלה כמה כסף מגיע לך חזרה מהמדינה',
     icon: 'request_quote',
-    color: '#facc15', // yellow-400
-    colorClass: 'yellow',
+    color: '#A85838', // terracotta accent
   },
 ];
 
@@ -71,9 +66,9 @@ export function ServiceSelector() {
   const router = useRouter();
 
   return (
-    <div className="dark min-h-screen flex flex-col bg-surface text-on-surface">
+    <div className="min-h-screen flex flex-col bg-surface text-on-surface">
       {/* TopAppBar */}
-      <header className="fixed top-0 w-full z-50 bg-[#0e0e0e]/70 backdrop-blur-md">
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#E5E0D8]">
         <div className="flex flex-row-reverse justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
@@ -83,7 +78,7 @@ export function ServiceSelector() {
                 src="https://lh3.googleusercontent.com/aida/ADBb0ujXdUtl-PPfTBitnylbn45XJo_WBibBxI7ghqAMORdazRCcowJWNTJynABvjY0e_PMuGfhseRdZFIZIoHELYYfy-tgXoLoFRxB6_OQp_5OpBtvyp16ijCypJSGzVjIoQqBKuYOsrE8mONEOd8iq3Ulc7ZzoMX1keA-EmjJDw1Xsr9vW2KhShyu3YG_Ohdmk5IQF4_dDbN2gZ5n31nT6cnyRjNlU-iapHPnnOfgXgeFII22Of8Pr-q-ghKvtjrWw6WXE2ArK8H2KG6g"
               />
             </div>
-            <motion.button whileHover={{ scale: 1.1 }} className="text-zinc-200 hover:text-primary transition-colors">
+            <motion.button whileHover={{ scale: 1.1 }} className="text-[#555555] hover:text-primary transition-colors">
               <MaterialSymbol icon="account_circle" />
             </motion.button>
           </div>
@@ -92,10 +87,10 @@ export function ServiceSelector() {
             <button onClick={() => router.push('/')} className="text-primary font-bold border-b-2 border-primary font-headline transition-colors hover:text-primary-dim">
               בית
             </button>
-            <a className="text-zinc-200 hover:text-primary-dim transition-colors font-headline" href="#">
+            <a className="text-[#555555] hover:text-primary-dim transition-colors font-headline" href="#">
               השירותים שלנו
             </a>
-            <a className="text-zinc-200 hover:text-primary-dim transition-colors font-headline" href="#">
+            <a className="text-[#555555] hover:text-primary-dim transition-colors font-headline" href="#">
               עלינו
             </a>
           </nav>
@@ -110,10 +105,10 @@ export function ServiceSelector() {
           transition={{ duration: 0.6 }}
           className="max-w-5xl w-full text-center mb-16"
         >
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-on-surface">
+          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-[#242424]">
             מה תרצה לבדוק היום?
           </h1>
-          <p className="text-zinc-200 text-lg md:text-xl font-body max-w-2xl mx-auto">
+          <p className="text-[#555555] text-lg md:text-xl font-body max-w-2xl mx-auto">
             5 דקות שיגלו לך איפה הכסף נעלם. בחר מאיפה להתחיל
           </p>
         </motion.div>
@@ -125,35 +120,29 @@ export function ServiceSelector() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.button
               key={service.id}
               onClick={() => router.push(`/services/${service.id}`)}
               variants={cardVariants}
-              whileHover={{ y: -8, boxShadow: `0px 10px 40px ${service.color}40` }}
+              whileHover={{ y: -4, boxShadow: '0 16px 48px rgba(0,0,0,0.08)' }}
               whileTap={{ scale: 0.98 }}
-              className="group relative overflow-hidden bg-surface-container-low p-8 rounded-xl text-right transition-all duration-300 hover:bg-surface-container-high border border-outline-variant/10 hover:border-opacity-30"
-              style={{
-                '--service-color': service.color,
-                '--service-color-light': `${service.color}15`,
-              } as React.CSSProperties & { '--service-color': string; '--service-color-light': string }}
+              className="group relative overflow-hidden bg-white p-8 rounded-xl text-right transition-all duration-300 border border-[#E5E0D8] shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 blur-[80px] rounded-full opacity-20" style={{ backgroundColor: service.color }}></div>
-
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div className="mb-8">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     className="inline-flex p-3 rounded-lg mb-6 transition-colors"
                     style={{
-                      backgroundColor: `${service.color}20`,
+                      backgroundColor: `${service.color}15`,
                     }}
                   >
                     <MaterialSymbol icon={service.icon} className="text-4xl" style={{ color: service.color }} filled />
                   </motion.div>
 
-                  <h3 className="text-2xl font-bold text-on-surface mb-2 font-headline">{service.title}</h3>
-                  <p className="text-zinc-200 font-body leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-bold text-[#242424] mb-2 font-headline">{service.title}</h3>
+                  <p className="text-[#555555] font-body leading-relaxed">{service.description}</p>
                 </div>
 
                 <div className="flex items-center gap-2 text-primary font-semibold group-hover:-translate-x-2 transition-transform">
@@ -164,17 +153,14 @@ export function ServiceSelector() {
             </motion.button>
           ))}
         </motion.div>
-
-        {/* Decorative background element */}
-        <div className="fixed bottom-0 left-0 w-full h-[512px] bg-gradient-to-t from-primary/5 to-transparent pointer-events-none z-[-1]"></div>
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-12 border-t border-zinc-800/20 bg-surface">
+      <footer className="w-full py-12 border-t border-[#E5E0D8] bg-surface">
         <div className="flex flex-col md:flex-row-reverse justify-between items-center px-8 w-full max-w-7xl mx-auto gap-6">
           <div className="text-lg font-bold text-primary font-body">KOALA STUDIO</div>
 
-          <nav className="flex flex-row gap-6 text-zinc-300 font-body text-sm">
+          <nav className="flex flex-row gap-6 text-[#555555] font-body text-sm">
             <a className="hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">
               איך זה עובד
             </a>
@@ -186,7 +172,7 @@ export function ServiceSelector() {
             </a>
           </nav>
 
-          <div className="text-zinc-300 font-body text-sm text-right">© 2024 קואלה - ייעוץ פיננסי אישי</div>
+          <div className="text-[#555555] font-body text-sm text-right">© 2024 קואלה - ייעוץ פיננסי אישי</div>
         </div>
       </footer>
 

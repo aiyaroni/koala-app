@@ -40,8 +40,8 @@ export default function StepTaxTriggers({ data, onChange }: Props) {
   return (
     <div className="flex flex-col gap-6">
       <div className="mb-2">
-        <h2 className="text-2xl font-bold text-stone-100">טריגרים להחזר מס 💸</h2>
-        <p className="text-stone-400 mt-1 text-sm">
+        <h2 className="text-2xl font-bold text-[#242424]">טריגרים להחזר מס 💸</h2>
+        <p className="text-[#555555] mt-1 text-sm">
           נזהה אילו אירועים בחיים שלך זכאים להחזר מס מהמדינה
         </p>
       </div>
@@ -61,9 +61,9 @@ export default function StepTaxTriggers({ data, onChange }: Props) {
                 onClick={() => toggleYear(year)}
                 className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border"
                 style={{
-                  background: selected ? "#facc15" : "transparent",
-                  color: selected ? "#1c1917" : "#a8a29e",
-                  borderColor: selected ? "#facc15" : "#44403c",
+                  background: selected ? "#A85838" : "transparent",
+                  color: selected ? "#ffffff" : "#555555",
+                  borderColor: selected ? "#A85838" : "#E5E0D8",
                 }}
               >
                 {year}

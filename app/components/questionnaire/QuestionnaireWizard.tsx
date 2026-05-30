@@ -127,15 +127,15 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
-          className="w-24 h-24 rounded-full flex items-center justify-center text-5xl"
-          style={{ background: "linear-gradient(135deg, #84cc16, #d946ef)" }}
+          className="w-24 h-24 rounded-full flex items-center justify-center text-5xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+          style={{ background: "#A85838" }}
         >
           🎉
         </motion.div>
 
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-stone-100">עשית את זה!</h2>
-          <p className="text-stone-400 mt-2 max-w-md leading-relaxed">
+          <h2 className="text-3xl font-bold text-[#242424]">עשית את זה!</h2>
+          <p className="text-[#555555] mt-2 max-w-md leading-relaxed">
             השאלון הושלם. הנתונים שלך נקלטו בהצלחה. בקרוב יצור איתך קשר יועץ KOALA עם ניתוח מעמיק.
           </p>
         </div>
@@ -163,7 +163,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
         <button
           type="button"
           onClick={() => { setState(initialState); setStep(0); setDone(false); }}
-          className="mt-2 px-6 py-3 rounded-full text-sm font-medium text-stone-400 border border-stone-700 hover:border-stone-500 transition-all"
+          className="mt-2 px-6 py-3 rounded-full text-sm font-medium text-[#555555] border border-[#E5E0D8] hover:border-[#D9D2C7] transition-all"
         >
           התחל מחדש
         </button>
@@ -228,7 +228,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
           disabled={step === 0}
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-          style={{ borderColor: "#44403c", color: "#a8a29e" }}
+          style={{ borderColor: "#E5E0D8", color: "#555555" }}
         >
           → חזרה
         </motion.button>
@@ -241,9 +241,9 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
           whileHover={valid ? { scale: 1.02 } : {}}
           className="flex-1 flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
           style={{
-            background: valid ? "linear-gradient(to left, #84cc16, #65a30d)" : "#292524",
-            color: valid ? "#1c1917" : "#57534e",
-            border: valid ? "none" : "1px solid #44403c",
+            background: valid ? "#A85838" : "#F5F2EE",
+            color: valid ? "#FFFFFF" : "#555555",
+            border: valid ? "none" : "1px solid #E5E0D8",
           }}
         >
           {step === stepKeys.length - 1 ? (
@@ -259,7 +259,7 @@ export default function QuestionnaireWizard({ serviceId = "default" }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-xs text-center mt-3"
-          style={{ color: "#d946ef" }}
+          style={{ color: "#A85838" }}
         >
           יש למלא את השדות החובה כדי להמשיך
         </motion.p>
@@ -272,11 +272,11 @@ function SummaryCard({ emoji, label, value }: { emoji: string; label: string; va
   return (
     <div
       className="flex flex-col gap-1 p-4 rounded-2xl"
-      style={{ background: "rgba(41,37,36,0.8)", border: "1px solid #44403c" }}
+      style={{ background: "rgba(245,242,238,0.8)", border: "1px solid #E5E0D8" }}
     >
       <span className="text-2xl">{emoji}</span>
       <span className="text-xs text-stone-500">{label}</span>
-      <span className="text-base font-semibold text-stone-100">{value}</span>
+      <span className="text-base font-semibold text-[#242424]">{value}</span>
     </div>
   );
 }
